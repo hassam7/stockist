@@ -11,6 +11,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 
+import { StockCardService } from './services/stock-card.service';
+import { SharedModule } from './shared/shared.module';
+
 registerLocaleData(en);
 
 @NgModule({
@@ -23,9 +26,10 @@ registerLocaleData(en);
     NgZorroAntdModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [{ provide: NZ_I18N, useValue: en_US }, StockCardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
