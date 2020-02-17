@@ -13,6 +13,8 @@ import en from '@angular/common/locales/en';
 
 import { StockCardService } from './services/stock-card.service';
 import { SharedModule } from './shared/shared.module';
+import { LayoutModule } from './layout/layout.module';
+import { StockSymbolSearchService } from './services/stock-symbol-search.service';
 
 registerLocaleData(en);
 
@@ -28,8 +30,9 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     SharedModule,
+    LayoutModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }, StockCardService],
+  providers: [{ provide: NZ_I18N, useValue: en_US }, StockCardService, StockSymbolSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,17 @@
+<h1>Stockist Inc</h1>
+<div class="search">
+  <app-stock-search (symbolSelected)="onSymbolSelected($event)"></app-stock-search>
+</div>
+<div class="login">
+  <nz-avatar nz-dropdown [nzDropdownMenu]="menu" [nzSize]="32" nzIcon="user" style="background-color:#87d068;">
+  </nz-avatar>
+  <button nz-button nzType="default" nzGhost>Default</button>
+</div>
+
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <ul nz-menu nzSelectable>
+    <li nz-menu-item>Home</li>
+    <li nz-menu-item>Portfolio</li>
+    <li nz-menu-item>Logout</li>
+  </ul>
+</nz-dropdown-menu>
