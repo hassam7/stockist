@@ -16,7 +16,8 @@ import { FormsModule } from '@angular/forms';
   ],
   exports: [
     StockCardComponent,
-    StockSearchComponent
+    StockSearchComponent,
+    NgZorroAntdModule,
   ]
 })
 export class SharedModule { }
