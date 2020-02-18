@@ -15,9 +15,18 @@ import { StockCardService } from './services/stock-card.service';
 import { SharedModule } from './shared/shared.module';
 import { LayoutModule } from './layout/layout.module';
 import { StockSymbolSearchService } from './services/stock-symbol-search.service';
+import { CompanyProfileService } from './services/company-profile.service';
+import { StockQuoteSearchService } from './services/stock-quote-search.service';
+import { HomeModule } from './home/home.module';
 
 registerLocaleData(en);
 
+const PROVIDERS = [
+  StockCardService,
+  StockSymbolSearchService,
+  CompanyProfileService,
+  StockQuoteSearchService,
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,8 +40,9 @@ registerLocaleData(en);
     BrowserAnimationsModule,
     SharedModule,
     LayoutModule,
+    HomeModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }, StockCardService, StockSymbolSearchService],
+  providers: [{ provide: NZ_I18N, useValue: en_US }, ...PROVIDERS],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

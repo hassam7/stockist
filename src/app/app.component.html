@@ -4,29 +4,8 @@
   </nz-header>
   <nz-content>
     <div class="inner-content">
-      <div nz-row [nzGutter]="8">
-        <div nz-col nzSpan="12">
-          <nz-divider nzText="Stocks: Most Active"></nz-divider>
-          <stock-card [type]="'active'"></stock-card>
-          <nz-divider nzText="Stocks: Gainer"></nz-divider>
-          <stock-card [type]="'gainer'"></stock-card>
-          <nz-divider nzText="Stocks: Loser"></nz-divider>
-          <stock-card [type]="'loser'"></stock-card>
-        </div>
-        <div nz-col nzSpan="12">
-          <nz-divider nzText="Watch List"></nz-divider>
-          <nz-card style="width:100%;" nzTitle="Card title" [nzExtra]="extraTemplate">
-            <p>Card content</p>
-            <p>Card content</p>
-            <p>Card content</p>
-          </nz-card>
-          <ng-template #extraTemplate>
-            <a>More</a>
-          </ng-template>
-          <nz-divider nzText="Manager Portfolio"></nz-divider>
+     <router-outlet></router-outlet>
 
-        </div>
-      </div>
     </div>
   </nz-content>
   <nz-footer>Footer</nz-footer>
