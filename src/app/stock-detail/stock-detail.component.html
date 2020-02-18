@@ -1,0 +1,83 @@
+<div nz-row [nzGutter]="16">
+  <div nz-col nzSpan="12">
+    {{ companyProfile | json}}
+  </div>
+  <div nz-col nzSpan="12">
+    <nz-spin [nzSpinning]="isLoading">
+      <nz-row>
+        <nz-col [nzSpan]="24">
+          <nz-table [nzTemplateMode]="true" [nzSize]="'small'">
+            <tbody>
+              <tr>
+                <th colspan="2">Company Profile</th>
+              </tr>
+              <tr>
+                <td>Company Name</td>
+                <td>{{companyProfile.companyName}}</td>
+              </tr>
+              <tr>
+                <td>CEO</td>
+                <td>{{companyProfile.ceo}}</td>
+              </tr>
+              <tr>
+                <td>Description</td>
+                <td>{{companyProfile.description}}</td>
+              </tr>
+              <tr>
+                <td>Website</td>
+                <td>{{companyProfile.website}}</td>
+              </tr>
+
+            </tbody>
+          </nz-table>
+        </nz-col>
+
+      </nz-row>
+      <nz-row class="summary">
+        <nz-col [nzSpan]="24">
+          <nz-table [nzTemplateMode]="true" [nzSize]="'small'">
+            <tbody>
+              <tr>
+                <th colspan="2">Summary</th>
+              </tr>
+              <tr>
+                <td>Previous Close</td>
+                <td>{{stockQuote.previousClose | number: '1.0-2'}}</td>
+              </tr>
+              <tr>
+                <td>Open</td>
+                <td>{{stockQuote.open | number: '1.0-2' }}</td>
+              </tr>
+              <tr>
+                <td>High</td>
+                <td>{{stockQuote.dayHigh | number: '1.0-2' }}</td>
+              </tr>
+              <tr>
+                <td>Low</td>
+                <td>{{stockQuote.dayLow | number: '1.0-2' }}</td>
+              </tr>
+              <tr>
+                <td>Volume</td>
+                <td>{{stockQuote.volume | number: '1.0-2'}}</td>
+              </tr>
+              <tr>
+                <td>Average Volume</td>
+                <td>{{stockQuote.avgVolume | number: '1.0-2'}}</td>
+              </tr>
+              <tr>
+                <td>Earnings Announcement</td>
+                <td>{{stockQuote.earningsAnnouncement | date:'fullDate'}}</td>
+              </tr>
+              <tr>
+                <td>Market Cap</td>
+                <td>{{stockQuote.marketCap | number: '1.0-2'}}</td>
+              </tr>
+
+            </tbody>
+          </nz-table>
+        </nz-col>
+
+      </nz-row>
+    </nz-spin>
+  </div>
+</div>
