@@ -4,11 +4,12 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { StockCardComponent } from './stock-card/stock-card.component';
 import { StockSearchComponent } from './stock-search/stock-search.component';
 import { FormsModule } from '@angular/forms';
+import { StockGraphMiniComponent } from './stock-graph/stock-graph-mini/stock-graph-mini.component';
 
 
 
 @NgModule({
-  declarations: [StockCardComponent, StockSearchComponent],
+  declarations: [StockCardComponent, StockSearchComponent, StockGraphMiniComponent],
   imports: [
     CommonModule,
     NgZorroAntdModule,
@@ -17,6 +18,7 @@ import { FormsModule } from '@angular/forms';
   exports: [
     StockCardComponent,
     StockSearchComponent,
+    StockGraphMiniComponent,
     NgZorroAntdModule,
   ]
 })

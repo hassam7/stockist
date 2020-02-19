@@ -1,39 +1,11 @@
 <div nz-row [nzGutter]="16">
   <div nz-col nzSpan="12">
-    {{ companyProfile | json}}
+    <nz-card [nzTitle]="stockSymbol">
+      <app-stock-graph-mini [stockData]="stockHistoricalPrice"></app-stock-graph-mini>
+    </nz-card>
   </div>
-  <div nz-col nzSpan="12">
-    <nz-spin [nzSpinning]="isLoading">
-      <nz-row>
-        <nz-col [nzSpan]="24">
-          <nz-table [nzTemplateMode]="true" [nzSize]="'small'">
-            <tbody>
-              <tr>
-                <th colspan="2">Company Profile</th>
-              </tr>
-              <tr>
-                <td>Company Name</td>
-                <td>{{companyProfile.companyName}}</td>
-              </tr>
-              <tr>
-                <td>CEO</td>
-                <td>{{companyProfile.ceo}}</td>
-              </tr>
-              <tr>
-                <td>Description</td>
-                <td>{{companyProfile.description}}</td>
-              </tr>
-              <tr>
-                <td>Website</td>
-                <td>{{companyProfile.website}}</td>
-              </tr>
-
-            </tbody>
-          </nz-table>
-        </nz-col>
-
-      </nz-row>
-      <nz-row class="summary">
+  <div nz-col nzSpan="12" class="Summary-card">
+      <nz-row *ngIf="!isLoading">
         <nz-col [nzSpan]="24">
           <nz-table [nzTemplateMode]="true" [nzSize]="'small'">
             <tbody>
@@ -76,8 +48,36 @@
             </tbody>
           </nz-table>
         </nz-col>
+      </nz-row>
+
+      <nz-row *ngIf="!isLoading" class="company-profile">
+        <nz-col [nzSpan]="24">
+          <nz-table [nzTemplateMode]="true" [nzSize]="'small'">
+            <tbody>
+              <tr>
+                <th colspan="2">Company Profile</th>
+              </tr>
+              <tr>
+                <td>Company Name</td>
+                <td>{{companyProfile.companyName}}</td>
+              </tr>
+              <tr>
+                <td>CEO</td>
+                <td>{{companyProfile.ceo}}</td>
+              </tr>
+              <tr>
+                <td>Description</td>
+                <td>{{companyProfile.description}}</td>
+              </tr>
+              <tr>
+                <td>Website</td>
+                <td>{{companyProfile.website}}</td>
+              </tr>
+
+            </tbody>
+          </nz-table>
+        </nz-col>
 
       </nz-row>
-    </nz-spin>
   </div>
 </div>

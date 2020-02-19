@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { switchMap, tap, mergeMap } from 'rxjs/operators';
 import { CompanyProfileService, ICompanyProfile } from '../services/company-profile.service';
 import { IStockQuote, StockQuoteSearchService } from '../services/stock-quote-search.service';
+import { StockHistoricalPriceService } from '../services/stock-historical-price.service';
 
 @Component({
   selector: 'app-stock-detail',
@@ -14,11 +15,13 @@ export class StockDetailComponent implements OnInit {
 
   public companyProfile: ICompanyProfile;
   public stockQuote: IStockQuote;
-  private stockSymbol: string;
+  public stockHistoricalPrice;
+  public stockSymbol: string;
   constructor(
     private route: ActivatedRoute,
     private companyProfileService: CompanyProfileService,
     private stockQuoteSearch: StockQuoteSearchService,
+    private stockHistoricalPriceService: StockHistoricalPriceService,
   ) { }
 
   ngOnInit(): void {
@@ -32,10 +35,13 @@ export class StockDetailComponent implements OnInit {
         mergeMap(companyProfileData => {
           this.companyProfile = companyProfileData;
           return this.stockQuoteSearch.getQuote(this.stockSymbol);
-        })
-
-      ).subscribe(stockQuote => {
-        this.stockQuote = stockQuote;
+        }),
+        mergeMap(stockQuote => {
+          this.stockQuote = stockQuote;;
+          return this.stockHistoricalPriceService.get(this.stockSymbol);
+        }),
+      ).subscribe(historicalPrice => {
+        this.stockHistoricalPrice = historicalPrice;
         this.isLoading = false;
       });
   }
