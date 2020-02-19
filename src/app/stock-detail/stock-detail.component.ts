@@ -3,7 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { switchMap, tap, mergeMap } from 'rxjs/operators';
 import { CompanyProfileService, ICompanyProfile } from '../services/company-profile.service';
 import { IStockQuote, StockQuoteSearchService } from '../services/stock-quote-search.service';
-import { StockHistoricalPriceService } from '../services/stock-historical-price.service';
+import { StockHistoricalPriceService, IHistoricalData } from '../services/stock-historical-price.service';
+import { ISelectedData } from '../shared/stock-graph/stock-graph-mini/stock-graph-mini.component';
 
 @Component({
   selector: 'app-stock-detail',
@@ -15,8 +16,9 @@ export class StockDetailComponent implements OnInit {
 
   public companyProfile: ICompanyProfile;
   public stockQuote: IStockQuote;
-  public stockHistoricalPrice;
+  public stockHistoricalPrice: IHistoricalData[];
   public stockSymbol: string;
+  public selectedData: ISelectedData;
   constructor(
     private route: ActivatedRoute,
     private companyProfileService: CompanyProfileService,
@@ -44,6 +46,10 @@ export class StockDetailComponent implements OnInit {
         this.stockHistoricalPrice = historicalPrice;
         this.isLoading = false;
       });
+  }
+
+  public onDataSelected(data: ISelectedData) {
+    this.selectedData = data;
   }
 
 }

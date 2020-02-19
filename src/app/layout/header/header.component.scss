@@ -11,3 +11,10 @@ h1 {
 .search {
   width: 60%;
 }
+
+a,
+a:active,
+a:visited,
+a:hover {
+  color: currentColor;
+}

@@ -29,11 +29,7 @@ export class StockHistoricalPriceService {
   constructor(private httpClient: HttpClient) { }
 
   public get(symbol: string): Observable<IHistoricalData[]> {
-    const date = new Date();
-    const month = `${date.getUTCMonth() + 1}`.length > 1 ? `${date.getUTCMonth() + 1}` : `0${date.getUTCMonth() + 1}`;
-    const range = `${date.getUTCFullYear()}-${month}-${date.getUTCDate()}`;
     return this.httpClient
-      // .get<IServerResponse>(`https://financialmodelingprep.com/api/v3/historical-price-full/${symbol}?from=${range}&to=${range}`)
       .get<IServerResponse>(`https://financialmodelingprep.com/api/v3/historical-price-full/${symbol}`)
       .pipe(
         map(serverResponse => serverResponse.historical)

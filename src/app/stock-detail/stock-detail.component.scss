@@ -1,7 +1,13 @@
-.summary-card {
-  height: 600px;
+.summary-cards {
+  min-height: 300px;
+  margin-top: 12px;
 }
 
-.company-profile {
-  margin-top: 40px;
+.graph-detail {
+  display: flex;
+  min-height: 400px;
+}
+
+.info-card {
+  height: 100%;
 }
