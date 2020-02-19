@@ -1,10 +1,11 @@
 <div nz-row [nzGutter]="16">
-  <div nz-col nzSpan="12">
-    <nz-card [nzTitle]="stockSymbol">
-      <app-stock-graph-mini [stockData]="stockHistoricalPrice"></app-stock-graph-mini>
-    </nz-card>
-  </div>
-  <div nz-col nzSpan="12" class="Summary-card">
+  <nz-spin [nzSpinning]="isLoading" style="min-height: 800px;">
+    <div nz-col nzSpan="12">
+      <nz-card [nzTitle]="stockSymbol">
+        <app-stock-graph-mini [stockData]="stockHistoricalPrice"></app-stock-graph-mini>
+      </nz-card>
+    </div>
+    <div nz-col nzSpan="12" class="Summary-card">
       <nz-row *ngIf="!isLoading">
         <nz-col [nzSpan]="24">
           <nz-table [nzTemplateMode]="true" [nzSize]="'small'">
@@ -79,5 +80,6 @@
         </nz-col>
 
       </nz-row>
-  </div>
+    </div>
+  </nz-spin>
 </div>

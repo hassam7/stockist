@@ -39,7 +39,7 @@ export class StockGraphMiniComponent implements OnChanges {
     const padding = 40;
     const svgElement = this.nativeElement.querySelector('svg');
 
-    const formatTime = timeFormat('%Y');
+    const formatTime = timeFormat('%b %Y');
     const dataset = dataSet.map(d => {
       return {
         date: new Date(d.date),
