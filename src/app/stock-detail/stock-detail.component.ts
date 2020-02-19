@@ -32,6 +32,7 @@ export class StockDetailComponent implements OnInit {
         switchMap(params => {
           this.stockSymbol = params.get('symbol');
           this.isLoading = true;
+          this.selectedData = null;
           return this.companyProfileService.getCompanyProfile(this.stockSymbol);
         }),
         mergeMap(companyProfileData => {
