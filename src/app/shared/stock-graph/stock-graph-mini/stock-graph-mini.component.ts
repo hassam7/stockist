@@ -12,7 +12,7 @@ export interface ISelectedData {
   date: Date;
   open: number;
   close: number;
-  hight: number;
+  high: number;
   volume: number;
 }
 
