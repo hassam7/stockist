@@ -10,7 +10,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let data of basicTable.data">
-        <td><a [routerLink]="['stock', data.ticker]">{{ data.ticker }}</a></td>
+        <td><a [routerLink]="['/stock', data.ticker]">{{ data.ticker }}</a></td>
         <td>{{ data.price | number: '1.0-2'}}</td>
         <td [ngClass]="{'ant-alert-error': isNegative(data.changesPercentage), 'ant-alert-success': isPositive(data.changes)}">
           {{ data.changes | number: '1.0-2' }}
