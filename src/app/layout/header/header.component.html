@@ -3,9 +3,9 @@
   <app-stock-search (symbolSelected)="onSymbolSelected($event)"></app-stock-search>
 </div>
 <div class="login">
-  <nz-avatar nz-dropdown [nzDropdownMenu]="menu" [nzSize]="32" nzIcon="user" style="background-color:#87d068;">
+  <nz-avatar *ngIf="loginService.isUserLoggedIn" nz-dropdown [nzDropdownMenu]="menu" [nzSize]="32" nzIcon="user" style="background-color:#87d068;">
   </nz-avatar>
-  <button nz-button nzType="default" nzGhost>Default</button>
+  <a *ngIf="!loginService.isUserLoggedIn" [routerLinkActive]="'active'" [routerLink]="'/login'" nz-button nzType="default" nzGhost>Login</a>
 </div>
 
 <nz-dropdown-menu #menu="nzDropdownMenu">

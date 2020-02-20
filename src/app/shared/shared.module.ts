@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 import { StockCardComponent } from './stock-card/stock-card.component';
 import { StockSearchComponent } from './stock-search/stock-search.component';
 import { StockGraphMiniComponent } from './stock-graph/stock-graph-mini/stock-graph-mini.component';
+import { LoginComponent } from './login/login.component';
 
-const COMPONENTS = [StockCardComponent, StockSearchComponent, StockGraphMiniComponent];
+const COMPONENTS = [StockCardComponent, StockSearchComponent, StockGraphMiniComponent, LoginComponent];
 
 @NgModule({
   declarations: [COMPONENTS],
@@ -17,6 +18,7 @@ const COMPONENTS = [StockCardComponent, StockSearchComponent, StockGraphMiniComp
     CommonModule,
     FormsModule,
     RouterModule,
+    ReactiveFormsModule,
     NgZorroAntdModule,
   ],
   exports: [
