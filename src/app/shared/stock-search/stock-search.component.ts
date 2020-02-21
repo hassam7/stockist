@@ -13,7 +13,6 @@ export class StockSearchComponent {
   @Output() symbolSelected = new EventEmitter<string>();
   public selectedValue = null;
   public listOfOption: Array<{ symbol: string; name: string }> = [];
-  public nzFilterOption = () => true;
   constructor(private stockSymbolSearchService: StockSymbolSearchService) { }
 
   public valueSelected(event: string): void {
