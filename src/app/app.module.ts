@@ -19,6 +19,7 @@ import { CompanyProfileService } from './services/company-profile.service';
 import { StockQuoteSearchService } from './services/stock-quote-search.service';
 import { HomeModule } from './home/home.module';
 import { StockHistoricalPriceService } from './services/stock-historical-price.service';
+import { NewsService } from './services/news.service';
 
 registerLocaleData(en);
 
@@ -28,6 +29,7 @@ const PROVIDERS = [
   CompanyProfileService,
   StockQuoteSearchService,
   StockHistoricalPriceService,
+  NewsService
 ];
 @NgModule({
   declarations: [

@@ -9,8 +9,9 @@ import { StockCardComponent } from './stock-card/stock-card.component';
 import { StockSearchComponent } from './stock-search/stock-search.component';
 import { StockGraphMiniComponent } from './stock-graph/stock-graph-mini/stock-graph-mini.component';
 import { LoginComponent } from './login/login.component';
+import { NewsCardComponent } from './news-card/news-card.component';
 
-const COMPONENTS = [StockCardComponent, StockSearchComponent, StockGraphMiniComponent, LoginComponent];
+const COMPONENTS = [StockCardComponent, StockSearchComponent, StockGraphMiniComponent, LoginComponent, NewsCardComponent];
 
 @NgModule({
   declarations: [COMPONENTS],
