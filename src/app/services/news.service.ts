@@ -30,7 +30,7 @@ export class NewsService {
 
   getNews() {
     return this.httpClient
-      .get<IServerResponse>(`http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=2d8e2e8d06eb426db9ddd34879065b4d`)
+      .get<IServerResponse>(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=2d8e2e8d06eb426db9ddd34879065b4d`)
       .pipe(
         map(response => {
           return response.articles;
