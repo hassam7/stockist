@@ -5,6 +5,7 @@ import { CompanyProfileService, ICompanyProfile } from '../services/company-prof
 import { IStockQuote, StockQuoteSearchService } from '../services/stock-quote-search.service';
 import { StockHistoricalPriceService, IHistoricalData } from '../services/stock-historical-price.service';
 import { ISelectedData } from '../shared/stock-graph/stock-graph-mini/stock-graph-mini.component';
+import { RecentlyViewedStocksService } from '../services/recently-viewed-stocks.service';
 
 @Component({
   selector: 'app-stock-detail',
@@ -24,6 +25,7 @@ export class StockDetailComponent implements OnInit {
     private companyProfileService: CompanyProfileService,
     private stockQuoteSearch: StockQuoteSearchService,
     private stockHistoricalPriceService: StockHistoricalPriceService,
+    private recentlyViewedStocksService: RecentlyViewedStocksService,
   ) { }
 
   ngOnInit(): void {
@@ -45,6 +47,7 @@ export class StockDetailComponent implements OnInit {
         }),
       ).subscribe(historicalPrice => {
         this.stockHistoricalPrice = historicalPrice;
+        this.recentlyViewedStocksService.addNewStock(this.stockSymbol);
         this.isLoading = false;
       });
   }

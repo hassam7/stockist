@@ -1,3 +1,12 @@
+<nz-breadcrumb>
+  <nz-breadcrumb-item>
+    <a [routerLink]="['/home']">Home</a>
+  </nz-breadcrumb-item>
+  <nz-breadcrumb-item>
+    Stock Details for: {{companyProfile?.companyName}}
+  </nz-breadcrumb-item>
+</nz-breadcrumb>
+<br>
 <div nz-row [nzGutter]="16" class="graph-detail">
   <div nz-col nzSpan="18">
     <nz-card [nzTitle]="stockSymbol">

@@ -12,14 +12,16 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 
 import { StockCardService } from './services/stock-card.service';
-import { SharedModule } from './shared/shared.module';
-import { LayoutModule } from './layout/layout.module';
 import { StockSymbolSearchService } from './services/stock-symbol-search.service';
 import { CompanyProfileService } from './services/company-profile.service';
 import { StockQuoteSearchService } from './services/stock-quote-search.service';
-import { HomeModule } from './home/home.module';
 import { StockHistoricalPriceService } from './services/stock-historical-price.service';
 import { NewsService } from './services/news.service';
+import { RecentlyViewedStocksService } from './services/recently-viewed-stocks.service';
+
+import { SharedModule } from './shared/shared.module';
+import { LayoutModule } from './layout/layout.module';
+import { HomeModule } from './home/home.module';
 
 registerLocaleData(en);
 
@@ -29,7 +31,8 @@ const PROVIDERS = [
   CompanyProfileService,
   StockQuoteSearchService,
   StockHistoricalPriceService,
-  NewsService
+  NewsService,
+  RecentlyViewedStocksService,
 ];
 @NgModule({
   declarations: [
