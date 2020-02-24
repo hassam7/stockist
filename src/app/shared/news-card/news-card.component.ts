@@ -8,10 +8,14 @@ import { NewsService, Article } from 'src/app/services/news.service';
 })
 
 export class NewsCardComponent implements OnInit {
+  public isLoading = true;
   public newsArticles: Article[];
   constructor(private newsService: NewsService) { }
 
   ngOnInit() {
-    this.newsService.getNews().subscribe(articles => this.newsArticles = articles);
+    this.newsService.getNews().subscribe(articles => {
+      this.newsArticles = articles;
+      this.isLoading = false;
+    });
   }
 }
