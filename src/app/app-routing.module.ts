@@ -20,7 +20,8 @@ const routes: Routes = [
   {
     path: 'stock',
     loadChildren: () => import('./stock-detail/stock-detail.module').then(m => m.StockDetailModule)
-  }];
+  },
+  { path: 'portfolio', loadChildren: () => import('./portfolio/portfolio.module').then(m => m.PortfolioModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
