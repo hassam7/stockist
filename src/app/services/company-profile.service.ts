@@ -30,14 +30,18 @@ export interface ICompanyProfile {
 
 @Injectable({ providedIn: 'root' })
 export class CompanyProfileService {
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
-  public getCompanyProfile(companyName: string): Observable<ICompanyProfile | null> {
+  public getCompanyProfile(
+    companyName: string
+  ): Observable<ICompanyProfile | null> {
     return this.httpClient
-      .get<IServerResponse>(`https://financialmodelingprep.com/api/v3/company/profile/${companyName}`)
+      .get<IServerResponse>(
+        `https://financialmodelingprep.com/api/v3/company/profile/${companyName}`
+      )
       .pipe(
         map(response => {
-          return {...response.profile, symbol: response.symbol} || null;
+          return { ...response.profile, symbol: response.symbol } || null;
         })
       );
   }

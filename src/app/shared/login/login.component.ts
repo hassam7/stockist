@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/services/login.service';
@@ -9,11 +8,14 @@ import { Router } from '@angular/router';
   templateUrl: 'login.component.html',
   styleUrls: ['login.component.scss']
 })
-
 export class LoginComponent implements OnInit {
   validateForm: FormGroup;
 
-  constructor(private router: Router, private fb: FormBuilder, private loginService: LoginService) { }
+  constructor(
+    private router: Router,
+    private fb: FormBuilder,
+    private loginService: LoginService
+  ) {}
 
   submitForm(): void {
     if (this.validateForm.valid) {
@@ -27,7 +29,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.validateForm = this.fb.group({
       userName: [null, [Validators.required]],
-      password: [null, [Validators.required]],
+      password: [null, [Validators.required]]
     });
   }
 }

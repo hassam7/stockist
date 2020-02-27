@@ -8,7 +8,6 @@ import { StockDetailRoutingModule } from './stock-detail-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { StockDetailComponent } from './stock-detail.component';
 
-
 @NgModule({
   declarations: [StockDetailComponent],
   imports: [
@@ -16,7 +15,7 @@ import { StockDetailComponent } from './stock-detail.component';
     SharedModule,
     StockDetailRoutingModule,
     NgZorroAntdModule,
-    RouterModule,
+    RouterModule
   ]
 })
-export class StockDetailModule { }
+export class StockDetailModule {}

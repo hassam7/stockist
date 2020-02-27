@@ -3,28 +3,35 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './shared/login/login.component';
 
-
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: HomeComponent
   },
   {
     path: 'home',
-    component: HomeComponent,
+    component: HomeComponent
   },
   {
     path: 'login',
-    component: LoginComponent,
+    component: LoginComponent
   },
   {
     path: 'stock',
-    loadChildren: () => import('./stock-detail/stock-detail.module').then(m => m.StockDetailModule)
+    loadChildren: () =>
+      import('./stock-detail/stock-detail.module').then(
+        m => m.StockDetailModule
+      )
   },
-  { path: 'portfolio', loadChildren: () => import('./portfolio/portfolio.module').then(m => m.PortfolioModule) }];
+  {
+    path: 'portfolio',
+    loadChildren: () =>
+      import('./portfolio/portfolio.module').then(m => m.PortfolioModule)
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

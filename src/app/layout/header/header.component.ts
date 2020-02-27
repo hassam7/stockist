@@ -5,18 +5,14 @@ import { LoginService } from 'src/app/services/login.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  constructor(private router: Router, public loginService: LoginService) {}
 
-
-  constructor(private router: Router, public loginService: LoginService) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   public onSymbolSelected(symbol: string) {
     this.router.navigate(['stock', symbol]);
   }
-
 }

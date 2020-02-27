@@ -8,8 +8,6 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { SharedModule } from '../shared/shared.module';
 import { HeaderComponent } from './header/header.component';
 
-
-
 @NgModule({
   declarations: [HeaderComponent],
   imports: [
@@ -17,8 +15,8 @@ import { HeaderComponent } from './header/header.component';
     FormsModule,
     RouterModule,
     SharedModule,
-    NgZorroAntdModule,
+    NgZorroAntdModule
   ],
   exports: [HeaderComponent]
 })
-export class LayoutModule { }
+export class LayoutModule {}

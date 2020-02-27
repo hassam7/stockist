@@ -32,12 +32,10 @@ const PROVIDERS = [
   StockQuoteSearchService,
   StockHistoricalPriceService,
   NewsService,
-  RecentlyViewedStocksService,
+  RecentlyViewedStocksService
 ];
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -47,9 +45,9 @@ const PROVIDERS = [
     BrowserAnimationsModule,
     SharedModule,
     LayoutModule,
-    HomeModule,
+    HomeModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }, ...PROVIDERS],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

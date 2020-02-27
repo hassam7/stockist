@@ -10,7 +10,7 @@ const routes: Routes = [
     children: [
       {
         path: ':symbol',
-        component: StockDetailComponent,
+        component: StockDetailComponent
       }
     ]
   }
@@ -20,4 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class StockDetailRoutingModule { }
+export class StockDetailRoutingModule {}

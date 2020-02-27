@@ -26,14 +26,13 @@ export interface IHistoricalData {
 
 @Injectable({ providedIn: 'root' })
 export class StockHistoricalPriceService {
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   public get(symbol: string): Observable<IHistoricalData[]> {
     return this.httpClient
-      .get<IServerResponse>(`https://financialmodelingprep.com/api/v3/historical-price-full/${symbol}`)
-      .pipe(
-        map(serverResponse => serverResponse.historical)
-      );
+      .get<IServerResponse>(
+        `https://financialmodelingprep.com/api/v3/historical-price-full/${symbol}`
+      )
+      .pipe(map(serverResponse => serverResponse.historical));
   }
-
 }

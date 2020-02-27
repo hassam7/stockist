@@ -30,12 +30,13 @@ export interface IStockQuote {
 
 @Injectable({ providedIn: 'root' })
 export class StockQuoteSearchService {
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   getQuote(symbol: string) {
-    return this.httpClient.get<IServerResponse>(`https://financialmodelingprep.com/api/v3/quote/${symbol}`)
-      .pipe(
-        map(response => response[0])
-      );
+    return this.httpClient
+      .get<IServerResponse>(
+        `https://financialmodelingprep.com/api/v3/quote/${symbol}`
+      )
+      .pipe(map(response => response[0]));
   }
 }

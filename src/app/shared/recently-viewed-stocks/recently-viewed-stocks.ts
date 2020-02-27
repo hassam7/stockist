@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { RecentlyViewedStocksService } from 'src/app/services/recently-viewed-stocks.service';
 
@@ -7,16 +6,14 @@ import { RecentlyViewedStocksService } from 'src/app/services/recently-viewed-st
   templateUrl: 'recently-viewed-stocks.html',
   styleUrls: ['recently-viewed-stocks.scss']
 })
-
 export class RecentlyViewedStocksComponent implements OnInit {
-
   public get recentlyViewedStocks(): string[] {
     return this.recentlyViewedStocksService.getRecentlyViewedStocks(5);
   }
 
-  constructor(public recentlyViewedStocksService: RecentlyViewedStocksService) {
+  constructor(
+    public recentlyViewedStocksService: RecentlyViewedStocksService
+  ) {}
 
-  }
-
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 }

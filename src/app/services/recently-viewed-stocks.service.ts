@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({ providedIn: 'root' })
 export class RecentlyViewedStocksService {
   private recentlyViewedStocks: string[] = [];
-  constructor() { }
+  constructor() {}
 
   public addNewStock(stockSymbol: string) {
     this.recentlyViewedStocks.unshift(stockSymbol);

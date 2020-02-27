@@ -6,11 +6,10 @@ import { NewsService, Article } from 'src/app/services/news.service';
   templateUrl: 'news-card.component.html',
   styleUrls: ['news-card.component.scss']
 })
-
 export class NewsCardComponent implements OnInit {
   public isLoading = true;
   public newsArticles: Article[];
-  constructor(private newsService: NewsService) { }
+  constructor(private newsService: NewsService) {}
 
   ngOnInit() {
     this.newsService.getNews().subscribe(articles => {

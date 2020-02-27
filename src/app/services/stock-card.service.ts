@@ -28,28 +28,37 @@ export class StockCardService {
   private gainersEndpoint = `https://financialmodelingprep.com/api/v3/stock/gainers`;
   private losersEndpoint = `https://financialmodelingprep.com/api/v3/stock/losers`;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
   public getActiveStockDetails() {
-    return this.httpClient.get<IActiveStocks>(this.activeEndpoint).pipe(
-      map(activeStock => this.formatResponse(activeStock.mostActiveStock)),
-    );
+    return this.httpClient
+      .get<IActiveStocks>(this.activeEndpoint)
+      .pipe(
+        map(activeStock => this.formatResponse(activeStock.mostActiveStock))
+      );
   }
 
   public getGainingStockDetails() {
-    return this.httpClient.get<IGainingStocks>(this.gainersEndpoint).pipe(
-      map(gainingStock => this.formatResponse(gainingStock.mostGainerStock))
-    );
+    return this.httpClient
+      .get<IGainingStocks>(this.gainersEndpoint)
+      .pipe(
+        map(gainingStock => this.formatResponse(gainingStock.mostGainerStock))
+      );
   }
 
   public getLosingStockDetails() {
-    return this.httpClient.get<ILosingStocks>(this.losersEndpoint).pipe(
-      map(losingStock => this.formatResponse(losingStock.mostLoserStock))
-    );
+    return this.httpClient
+      .get<ILosingStocks>(this.losersEndpoint)
+      .pipe(
+        map(losingStock => this.formatResponse(losingStock.mostLoserStock))
+      );
   }
 
   private formatResponse(stockData: StockItem[]) {
-    return stockData.map(stockItem => ({ ...stockItem, changesPercentage: this.removeRoundBrackers(stockItem.changesPercentage) }));
+    return stockData.map(stockItem => ({
+      ...stockItem,
+      changesPercentage: this.removeRoundBrackers(stockItem.changesPercentage)
+    }));
   }
 
   private removeRoundBrackers(text: string) {

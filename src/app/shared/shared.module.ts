@@ -12,12 +12,13 @@ import { LoginComponent } from './login/login.component';
 import { NewsCardComponent } from './news-card/news-card.component';
 import { RecentlyViewedStocksComponent } from './recently-viewed-stocks/recently-viewed-stocks';
 
-const COMPONENTS = [StockCardComponent,
+const COMPONENTS = [
+  StockCardComponent,
   StockSearchComponent,
   StockGraphMiniComponent,
   LoginComponent,
   NewsCardComponent,
-  RecentlyViewedStocksComponent,
+  RecentlyViewedStocksComponent
 ];
 
 @NgModule({
@@ -27,11 +28,8 @@ const COMPONENTS = [StockCardComponent,
     FormsModule,
     RouterModule,
     ReactiveFormsModule,
-    NgZorroAntdModule,
+    NgZorroAntdModule
   ],
-  exports: [
-    ...COMPONENTS,
-    NgZorroAntdModule,
-  ]
+  exports: [...COMPONENTS, NgZorroAntdModule]
 })
-export class SharedModule { }
+export class SharedModule {}
