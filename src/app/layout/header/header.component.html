@@ -10,8 +10,8 @@
 
 <nz-dropdown-menu #menu="nzDropdownMenu">
   <ul nz-menu nzSelectable>
-    <li nz-menu-item>Home</li>
-    <li nz-menu-item>Portfolio</li>
-    <li nz-menu-item>Logout</li>
+    <li nz-menu-item><a [routerLink]="'/home'">Home</a></li>
+    <li nz-menu-item><a [routerLink]="'/portfolio'">Portfolio</a></li>
+    <li nz-menu-item><a [routerLink]="'/logout'">Logout</a></li>
   </ul>
 </nz-dropdown-menu>
