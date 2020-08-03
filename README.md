@@ -1,3 +1,9 @@
+# See it in Action Visit: https://stockist.now.sh/
+
+## About
+
+I created this application while learning and exploring ng zorro components. The application is mostly done but at some places it does not follow best practices and some of the code is not dry so beware. 
+
 # Stockist
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
